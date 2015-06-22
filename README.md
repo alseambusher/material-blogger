@@ -1,4 +1,6 @@
 Material theme for Blogger
 ==========================
 
-TODO
+(components taken from angular/material)
+
+TODO everything
