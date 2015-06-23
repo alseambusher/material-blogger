@@ -1,0 +1,74 @@
+h4 {
+	color: #0A00A0;
+}
+
+#navbar {
+	display: $navbar-display;
+}
+.header-inner .Header .titlewrapper {
+	padding:0px;
+	margin-bottom:-20px;
+}
+
+.header-inner .Header .descriptionwrapper {
+	margin:0px;
+	padding:0px;
+}
+
+.header-outer {
+	background: $primary-color !important;
+}
+
+.Header h1,.description {
+	color:$primary-text-color !important;
+}
+
+.date-header {
+  	@extend .z-depth-1;
+ 	padding: 5px;
+}
+
+.PageList {
+  	@extend .z-depth-2;
+ 	padding: 5px;
+	background:$secondary-color; 
+}
+.PageList a,h2 {
+	color:#ffffff;
+	text-decoration: none;
+	width:100%;
+	display:inline-block;
+}
+.PageList h2{
+	text-align:center;
+}
+.PageList ul {
+	list-style-type: none;
+	padding:0px;
+}
+.PageList li{
+	padding:5px;
+  	@include transition(.2s ease-out);
+	cursor: pointer;
+	&:hover {
+		background: lighten($secondary-color, 5%);
+  	}
+}
+.PageList .selected {
+	background: lighten($secondary-color, 8%);
+}
+
+.Stats {
+	text-align: center;
+	background: $secondary-color;
+  	@include transition(.2s ease-out);
+	padding: 10px;
+  	@extend .z-depth-1;
+  	&:hover {
+    		background-color: lighten($secondary-color, 5%);
+  		@extend .z-depth-1-half;
+  	}
+}
+input.gsc-search-button {
+	@extend .btn;
+}

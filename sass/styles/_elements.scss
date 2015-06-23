@@ -1,0 +1,63 @@
+// These are the elements which are not available in blogger by default
+// But can be used by editing blogs' HTML
+
+.btn {
+	border: none !important;
+  	border-radius: 2px !important;
+  	display: inline-block !important;
+  	height: $button-height !important;
+  	line-height: $button-line-height !important;
+  	outline: 0 !important;
+  	padding: 0 2rem !important;
+  	vertical-align: middle !important;
+  	// Gets rid of tap active state
+  	-webkit-tap-highlight-color: transparent !important;
+  	text-decoration:none !important;
+  	color: $button-color-raised !important;
+  	background-color: $button-color !important;
+  	text-align: center !important;
+  	letter-spacing: .5px !important;
+  	@extend .z-depth-1;
+  	@include transition(.2s ease-out);
+  	cursor: pointer !important;
+	width: auto !important;
+	
+  	&:hover {
+    		background-color: lighten($button-color, 5%) !important;
+		text-decoration: none !important;
+  		@extend .z-depth-1-half;
+  	}
+}
+
+.btn-small {
+	font-size: 14px;
+	padding: 8px 16px 8px 16px;
+}
+
+input[type=text] {
+  // General Styles
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid $input-border-color !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  height: 3rem !important;
+  width: 100% !important;
+
+  font-size: 1rem !important;
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  @include box-sizing(content-box);
+  transition: all .3s;
+
+  // Focused input style
+  &:focus:not([readonly]) {
+    border-bottom: 1px solid $input-focus-color !important;
+    box-shadow: 0 1px 0 0 $input-focus-color !important;
+  }
+}
+
+input[type=submit] {
+	@extend .btn;
+}
