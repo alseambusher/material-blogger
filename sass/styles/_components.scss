@@ -19,8 +19,15 @@ h4 {
 	background: $primary-color !important;
 }
 
-.Header h1,.description {
-	color:$primary-text-color !important;
+.Header .description {
+	color:$title-description-color !important;
+}
+
+.Header h1, h1 a {
+	color:$title-color !important;
+	&:hover {
+		color:$title-color !important;
+	}
 }
 
 .date-header {
@@ -72,3 +79,14 @@ h4 {
 input.gsc-search-button {
 	@extend .btn;
 }
+
+.BlogArchive {
+	@extend .simple-widget;
+}
+.Text {
+	@extend .simple-primary-widget;
+}
+.Label {
+	@extend .simple-primary-widget;
+}
+

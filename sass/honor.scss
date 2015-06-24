@@ -9,6 +9,10 @@
 $primary-color: #263238 !default;
 $secondary-color: #37474f !default; // bluish black
 
+//text colors
+$title-color: #F0F0F0 !default;
+$title-description-color: $title-color !default;
+
 $button-height: 36px !default;
 $button-line-height: 36px !default;
 $button-color-raised: #fff !default;
@@ -24,3 +28,4 @@ $navbar-display: none;
 
 @import "styles/elements";
 @import "styles/components";
+@import "overrides";

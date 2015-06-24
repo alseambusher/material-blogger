@@ -61,3 +61,36 @@ input[type=text] {
 input[type=submit] {
 	@extend .btn;
 }
+
+.simple-widget {
+	@extend .z-depth-1;
+	padding: 5px 10px 5px 10px !important;
+	&:hover {
+  		@extend .z-depth-1-half;
+	}
+}
+
+.simple-primary-widget {
+	@extend .z-depth-1;
+	padding: 5px 10px 5px 10px !important;
+	background: $secondary-color;
+	color: $primary-text-color !important;
+	&:hover {
+    		background-color: lighten($button-color, 5%) !important;
+  		@extend .z-depth-1-half;
+	}
+	& a {
+		color: $primary-text-color !important;
+		text-decoration: none;
+		&:hover {
+			color: darken($primary-text-color, 20%) !important;
+		}
+		&:visited {
+			color: lighten($primary-text-color, 10%) !important;
+		}
+	}
+	& h2 {
+		color: $primary-text-color !important;
+		text-align: center;
+	}
+}
