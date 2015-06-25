@@ -41,10 +41,10 @@ input[type=text] {
   border-bottom: 1px solid $input-border-color !important;
   border-radius: 0 !important;
   outline: none !important;
-  height: 3rem !important;
+  height: 3em !important;
   width: 100% !important;
 
-  font-size: 1rem !important;
+  font-size: 1em !important;
   margin: 0 0 15px 0 !important;
   padding: 0 !important;
   box-shadow: none !important;
@@ -65,8 +65,12 @@ input[type=submit] {
 .simple-widget {
 	@extend .z-depth-1;
 	padding: 5px 10px 5px 10px !important;
+  	@include transition(.2s ease-out);
 	&:hover {
   		@extend .z-depth-1-half;
+	}
+	& h2 {
+		text-align: center;
 	}
 }
 
@@ -75,8 +79,9 @@ input[type=submit] {
 	padding: 5px 10px 5px 10px !important;
 	background: $secondary-color;
 	color: $primary-text-color !important;
+  	@include transition(.2s ease-out);
 	&:hover {
-    		background-color: lighten($button-color, 5%) !important;
+    		background-color: lighten($secondary-color, 5%) !important;
   		@extend .z-depth-1-half;
 	}
 	& a {
@@ -86,11 +91,28 @@ input[type=submit] {
 			color: darken($primary-text-color, 20%) !important;
 		}
 		&:visited {
-			color: lighten($primary-text-color, 10%) !important;
+			color: lighten($primary-text-color, 30%) !important;
 		}
 	}
 	& h2 {
 		color: $primary-text-color !important;
 		text-align: center;
 	}
+}
+
+.simple-primary-widget-no-hover {
+	@extend .simple-primary-widget;
+	&:hover {
+    		background-color: $secondary-color !important;
+	}
+}
+
+.roboto {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.roboto-force {
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 300 !important;
 }

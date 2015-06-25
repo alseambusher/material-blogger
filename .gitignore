@@ -2,3 +2,4 @@
 *.swp
 .sass-cache
 *.css
+sass/_overrides.scss

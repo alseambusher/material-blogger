@@ -2,6 +2,10 @@ h4 {
 	color: #0A00A0;
 }
 
+a {
+  	@include transition(.2s ease-out);
+}
+
 #navbar {
 	display: $navbar-display;
 }
@@ -17,10 +21,14 @@ h4 {
 
 .header-outer {
 	background: $primary-color !important;
+	position: relative;
+	z-index: 2;
+	@extend .z-depth-2;
 }
 
 .Header .description {
 	color:$title-description-color !important;
+	@extend .roboto;
 }
 
 .Header h1, h1 a {
@@ -28,6 +36,10 @@ h4 {
 	&:hover {
 		color:$title-color !important;
 	}
+}
+
+.blog-posts {
+	@extend .roboto;
 }
 
 .date-header {
@@ -65,6 +77,14 @@ h4 {
 	background: lighten($secondary-color, 8%);
 }
 
+.PopularPosts ul {
+	@extend .simple-widget;
+}
+
+.PopularPosts ul li{
+	padding: 5px 10px 5px 0px;
+  	border-bottom: 1px solid #dddddd;
+}
 .Stats {
 	text-align: center;
 	background: $secondary-color;
@@ -83,10 +103,50 @@ input.gsc-search-button {
 .BlogArchive {
 	@extend .simple-widget;
 }
+
+.Profile {
+	@extend .simple-widget;
+}
 .Text {
 	@extend .simple-primary-widget;
 }
 .Label {
 	@extend .simple-primary-widget;
+}
+.CustomSearch {
+	@extend .simple-widget;
+}
+
+//search box
+.gsc-resultsbox-visible {
+	@extend .simple-widget;
+}
+
+.gsc-results {
+	border: 0 !important;
+	background-color: transparent !important; 
+	@extend .roboto;
+}
+.gsc-tabHeader{
+	@extend .btn;
+}
+
+.gsc-cursor-current-page {
+	color: $primary-text-color !important;
+}
+
+.post-title {
+	@extend .roboto-force;
+}
+.post-footer {
+	@extend .z-depth-1;
+}
+
+.widget {
+	@extend .roboto;
+}
+
+.popular-posts .item-snippet {
+	font-size: 0.8em;
 }
 
