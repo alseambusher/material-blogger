@@ -1,5 +1,5 @@
 *~
 *.swp
 .sass-cache
-*.css
+temp.css
 sass/_overrides.scss
