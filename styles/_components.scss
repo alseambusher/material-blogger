@@ -6,6 +6,10 @@ a {
   	@include transition(.2s ease-out);
 }
 
+.main-outer, .footer-outer {
+	background: $body-color;
+}
+
 #navbar {
 	display: $navbar-display;
 }
@@ -146,7 +150,13 @@ input.gsc-search-button {
 	@extend .roboto;
 }
 
+// Popular posts
 .popular-posts .item-snippet {
 	font-size: 0.8em;
+}
+.PopularPosts img {
+	@extend .z-depth-1;
+	padding: 0 !important;
+	margin-right: .4em !important;
 }
 
