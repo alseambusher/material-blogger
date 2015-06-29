@@ -52,12 +52,14 @@ a {
 }
 
 .PageList {
-  	@extend .z-depth-2;
- 	padding: 5px;
-	background:$secondary-color; 
+	@extend .simple-primary-widget;
+	padding: 5px !important;
+	@extend .roboto;
+	&:hover {
+		background: $secondary-color !important;
+	}
 }
 .PageList a,h2 {
-	color:#ffffff;
 	text-decoration: none;
 	width:100%;
 	display:inline-block;
@@ -71,6 +73,7 @@ a {
 }
 .PageList li{
 	padding:5px;
+	margin:1px;
   	@include transition(.2s ease-out);
 	cursor: pointer;
 	&:hover {
@@ -90,22 +93,31 @@ a {
   	border-bottom: 1px solid #dddddd;
 }
 .Stats {
+	@extend .simple-primary-widget;
+	padding: 10px !important;
 	text-align: center;
-	background: $secondary-color;
-  	@include transition(.2s ease-out);
-	padding: 10px;
-  	@extend .z-depth-1;
-  	&:hover {
-    		background-color: lighten($secondary-color, 5%);
-  		@extend .z-depth-1-half;
-  	}
 }
+
 input.gsc-search-button {
 	@extend .btn;
 }
 
 .BlogArchive {
 	@extend .simple-widget;
+}
+
+.BlogArchive .hierarchy .expanded ul {
+	&>li {
+		background: #eee !important;
+		//opacity: 1;
+	}
+	&>li:nth-child(odd) {
+		background: transparent !important;
+	}
+	& a {
+		padding: 5px;
+		text-decoration: none;
+	}
 }
 
 .Profile {
@@ -118,6 +130,9 @@ input.gsc-search-button {
 	@extend .simple-primary-widget;
 }
 .CustomSearch {
+	@extend .simple-widget;
+}
+.Followers {
 	@extend .simple-widget;
 }
 

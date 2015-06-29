@@ -1,6 +1,32 @@
-// These are the elements which are not available in blogger by default
-// But can be used by editing blogs' HTML
+@-webkit-keyframes ripple {
+  0% {
+    background-size: 1% 1%;
+    opacity: 0.5;
+  }
+  70% {
+    background-size: 1000% 1000%;
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    background-size: 1000% 1000%;
+  }
+}
 
+@keyframes ripple {
+  0% {
+    background-size: 1% 1%;
+    opacity: 0.5;
+  }
+  70% {
+    background-size: 1000% 1000%;
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    background-size: 1000% 1000%;
+  }
+}
 .btn {
 	border: none !important;
   	border-radius: 2px !important;
@@ -21,13 +47,35 @@
   	@include transition(.2s ease-out);
   	cursor: pointer !important;
 	width: auto !important;
-	
+
+	position: relative !important;
+    	overflow: hidden;
   	&:hover {
     		background-color: lighten($button-color, 5%) !important;
 		text-decoration: none !important;
+    		//background-color: lighten($button-color, 5%) !important;
   		@extend .z-depth-1-half;
   	}
+
+	// find a way to keep the animation alive
+	&:hover:after {
+		position: absolute;
+  		content: " ";
+  		height: 100%;
+  		width: 100%;
+  		top: 0;
+  		left: 0;
+  		pointer-events: none;
+  		background-image: radial-gradient(circle at center, #FFF 0%, #FFF 10%, transparent 10.1%, transparent 100%);
+  		background-position: center center;
+  		background-repeat: no-repeat;
+  		background-color: transparent;
+  		-webkit-animation: ripple 0.6s 0s normal forwards running ease-in;
+  		animation: ripple 0.6s 0s normal forwards running ease-in;
+
+	}
 }
+
 
 .btn-small {
 	font-size: 14px;

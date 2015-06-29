@@ -2,13 +2,13 @@
 .z-depth-0 {
   box-shadow: none !important; }
 
-.z-depth-1, .btn, input[type=submit], input.gsc-search-button, .gsc-tabHeader, .simple-widget, .PopularPosts ul, .BlogArchive, .Profile, .CustomSearch, .gsc-resultsbox-visible, .simple-primary-widget, .simple-primary-widget-no-hover, .Text, .Label, .date-header, .Stats, .post-footer, .PopularPosts img {
+.z-depth-1, .btn, input[type=submit], input.gsc-search-button, .gsc-tabHeader, .simple-widget, .PopularPosts ul, .BlogArchive, .Profile, .CustomSearch, .Followers, .gsc-resultsbox-visible, .simple-primary-widget, .simple-primary-widget-no-hover, .PageList, .Stats, .Text, .Label, .date-header, .post-footer, .PopularPosts img {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
-.z-depth-1-half, .btn:hover, input[type=submit]:hover, input.gsc-search-button:hover, .gsc-tabHeader:hover, .simple-widget:hover, .PopularPosts ul:hover, .BlogArchive:hover, .Profile:hover, .CustomSearch:hover, .gsc-resultsbox-visible:hover, .simple-primary-widget:hover, .simple-primary-widget-no-hover:hover, .Text:hover, .Label:hover, .Stats:hover {
+.z-depth-1-half, .btn:hover, input[type=submit]:hover, input.gsc-search-button:hover, .gsc-tabHeader:hover, .simple-widget:hover, .PopularPosts ul:hover, .BlogArchive:hover, .Profile:hover, .CustomSearch:hover, .Followers:hover, .gsc-resultsbox-visible:hover, .simple-primary-widget:hover, .simple-primary-widget-no-hover:hover, .PageList:hover, .Stats:hover, .Text:hover, .Label:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
-.z-depth-2, .header-outer, .PageList {
+.z-depth-2, .header-outer {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .z-depth-3 {
@@ -20,6 +20,26 @@
 .z-depth-5 {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22); }
 
+@-webkit-keyframes ripple {
+  0% {
+    background-size: 1% 1%;
+    opacity: 0.5; }
+  70% {
+    background-size: 1000% 1000%;
+    opacity: 0.2; }
+  100% {
+    opacity: 0;
+    background-size: 1000% 1000%; } }
+@keyframes ripple {
+  0% {
+    background-size: 1% 1%;
+    opacity: 0.5; }
+  70% {
+    background-size: 1000% 1000%;
+    opacity: 0.2; }
+  100% {
+    opacity: 0;
+    background-size: 1000% 1000%; } }
 .btn, input[type=submit], input.gsc-search-button, .gsc-tabHeader {
   border: none !important;
   border-radius: 2px !important;
@@ -41,10 +61,26 @@
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   cursor: pointer !important;
-  width: auto !important; }
+  width: auto !important;
+  position: relative !important;
+  overflow: hidden; }
   .btn:hover, input[type=submit]:hover, input.gsc-search-button:hover, .gsc-tabHeader:hover {
     background-color: #d91b66 !important;
     text-decoration: none !important; }
+  .btn:hover:after, input[type=submit]:hover:after, input.gsc-search-button:hover:after, .gsc-tabHeader:hover:after {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at center, #FFF 0%, #FFF 10%, transparent 10.1%, transparent 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    -webkit-animation: ripple 0.6s 0s normal forwards running ease-in;
+    animation: ripple 0.6s 0s normal forwards running ease-in; }
 
 .btn-small {
   font-size: 14px;
@@ -70,17 +106,17 @@ input[type=text] {
     border-bottom: 1px solid #c2185b !important;
     box-shadow: 0 1px 0 0 #c2185b !important; }
 
-.simple-widget, .PopularPosts ul, .BlogArchive, .Profile, .CustomSearch, .gsc-resultsbox-visible {
+.simple-widget, .PopularPosts ul, .BlogArchive, .Profile, .CustomSearch, .Followers, .gsc-resultsbox-visible {
   padding: 5px 10px 5px 10px !important;
   -webkit-transition: 0.2s ease-out;
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out; }
-  .simple-widget h2, .PopularPosts ul h2, .BlogArchive h2, .Profile h2, .CustomSearch h2, .gsc-resultsbox-visible h2 {
+  .simple-widget h2, .PopularPosts ul h2, .BlogArchive h2, .Profile h2, .CustomSearch h2, .Followers h2, .gsc-resultsbox-visible h2 {
     text-align: center; }
 
-.simple-primary-widget, .simple-primary-widget-no-hover, .Text, .Label {
+.simple-primary-widget, .simple-primary-widget-no-hover, .PageList, .Stats, .Text, .Label {
   padding: 5px 10px 5px 10px !important;
   background: #c2185b;
   color: #F0F0F0 !important;
@@ -89,23 +125,23 @@ input[type=text] {
   -o-transition: 0.2s ease-out;
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out; }
-  .simple-primary-widget:hover, .simple-primary-widget-no-hover:hover, .Text:hover, .Label:hover {
+  .simple-primary-widget:hover, .simple-primary-widget-no-hover:hover, .PageList:hover, .Stats:hover, .Text:hover, .Label:hover {
     background-color: #d91b66 !important; }
-  .simple-primary-widget a, .simple-primary-widget-no-hover a, .Text a, .Label a {
+  .simple-primary-widget a, .simple-primary-widget-no-hover a, .PageList a, .Stats a, .Text a, .Label a {
     color: #F0F0F0 !important;
     text-decoration: none; }
-    .simple-primary-widget a:hover, .simple-primary-widget-no-hover a:hover, .Text a:hover, .Label a:hover {
+    .simple-primary-widget a:hover, .simple-primary-widget-no-hover a:hover, .PageList a:hover, .Stats a:hover, .Text a:hover, .Label a:hover {
       color: #bdbdbd !important; }
-    .simple-primary-widget a:visited, .simple-primary-widget-no-hover a:visited, .Text a:visited, .Label a:visited {
+    .simple-primary-widget a:visited, .simple-primary-widget-no-hover a:visited, .PageList a:visited, .Stats a:visited, .Text a:visited, .Label a:visited {
       color: white !important; }
-  .simple-primary-widget h2, .simple-primary-widget-no-hover h2, .Text h2, .Label h2 {
+  .simple-primary-widget h2, .simple-primary-widget-no-hover h2, .PageList h2, .Stats h2, .Text h2, .Label h2 {
     color: #F0F0F0 !important;
     text-align: center; }
 
 .simple-primary-widget-no-hover:hover {
   background-color: #c2185b !important; }
 
-.roboto, .Header .description, .blog-posts, .gsc-results, .widget {
+.roboto, .Header .description, .blog-posts, .PageList, .gsc-results, .widget {
   font-family: 'Roboto', sans-serif;
   font-weight: 300; }
 
@@ -154,11 +190,11 @@ a {
   padding: 5px; }
 
 .PageList {
-  padding: 5px;
-  background: #c2185b; }
+  padding: 5px !important; }
+  .PageList:hover {
+    background: #c2185b !important; }
 
 .PageList a, h2 {
-  color: #ffffff;
   text-decoration: none;
   width: 100%;
   display: inline-block; }
@@ -172,6 +208,7 @@ a {
 
 .PageList li {
   padding: 5px;
+  margin: 1px;
   -webkit-transition: 0.2s ease-out;
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
@@ -189,16 +226,16 @@ a {
   border-bottom: 1px solid #dddddd; }
 
 .Stats {
-  text-align: center;
-  background: #c2185b;
-  -webkit-transition: 0.2s ease-out;
-  -moz-transition: 0.2s ease-out;
-  -o-transition: 0.2s ease-out;
-  -ms-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
-  padding: 10px; }
-  .Stats:hover {
-    background-color: #d91b66; }
+  padding: 10px !important;
+  text-align: center; }
+
+.BlogArchive .hierarchy .expanded ul > li {
+  background: #eee !important; }
+.BlogArchive .hierarchy .expanded ul > li:nth-child(odd) {
+  background: transparent !important; }
+.BlogArchive .hierarchy .expanded ul a {
+  padding: 5px;
+  text-decoration: none; }
 
 .gsc-results {
   border: 0 !important;
