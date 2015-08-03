@@ -47,8 +47,19 @@ a {
 }
 
 .date-header {
-  	@extend .z-depth-1;
+	@include BoxShadow(1);
  	padding: 5px;
+	width: auto !important;
+	background: $secondary-color !important;
+	& span {
+		color: $primary-text-color !important;
+	}
+	
+}
+
+.post {
+	@include BoxShadow(2);
+	padding: 5px 20px 10px 20px;
 }
 
 .PageList {
@@ -70,6 +81,7 @@ a {
 .PageList ul {
 	list-style-type: none;
 	padding:0px;
+	background: none !important;
 }
 .PageList li{
 	padding:5px;
@@ -79,6 +91,9 @@ a {
 	&:hover {
 		background: lighten($secondary-color, 5%);
   	}
+	& a, a:hover {
+		background: none !important;
+	}
 }
 .PageList .selected {
 	background: lighten($secondary-color, 8%);
@@ -158,7 +173,7 @@ input.gsc-search-button {
 	@extend .roboto-force;
 }
 .post-footer {
-	@extend .z-depth-1;
+	@include BoxShadow(1);
 }
 
 .widget {

@@ -125,7 +125,7 @@ input[type=submit] {
 .simple-primary-widget {
 	@extend .z-depth-1;
 	padding: 5px 10px 5px 10px !important;
-	background: $secondary-color;
+	background: $secondary-color !important;
 	color: $primary-text-color !important;
   	@include transition(.2s ease-out);
 	&:hover {
