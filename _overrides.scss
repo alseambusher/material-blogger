@@ -4,3 +4,11 @@
 .BlogArchive h2, .Profile h2, .CustomSearch h2, .PopularPosts h2 {
 	color: #000000 !important;
 }
+
+body, .fauxcolumn-outer .cap-top {
+	background: $body-color !important; 
+}
+
+.main-outer {
+	border-top: none !important;
+}
